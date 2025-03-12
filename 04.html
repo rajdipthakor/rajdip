@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        #special-heading{
+            color: rgb(127, 242, 242);
+            font: 50px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        #grade{
+            height: 500px;
+            background-color: bisque;
+            background-image: linear-gradient(rgb(118, 16, 129),red);
+        }
+    </style>
+
+    <title>prime or not</title>
+</head>
+<body>
+    <div id="grade">
+        <h1 id="special-heading">
+         
+    <script>
+        let n=prompt("Enter number:");
+        let count=0;
+        if(n<=1)
+        {
+            document.write("Its not a prime number");
+        }
+        else
+        {
+            for(let i=1;i<=n;i++)
+             {
+                if(n%i===0)
+                 {
+                    document.write("your number="+n%1+"<br>")
+                    count++;
+                 }
+
+             }
+            if(count>2)
+             {
+                document.write("This is not a prime number:");
+             }
+            else
+             {
+                document.write("This is a prime number:");
+             }
+        }
+    </script>
+       
+    </h1>
+</div>
+</body>
+</html>

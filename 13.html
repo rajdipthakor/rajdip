@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Compare Two Objects</h1>
+<p>Enter two objects in JSON format:</p>
+
+<label for="object1">Object 1:</label>
+<textarea id="object1" placeholder='{"name": "Alice", "age": 30, "city": "New York"}'></textarea>
+
+<label for="object2">Object 2:</label>
+<textarea id="object2" placeholder='{"name": "Alice", "age": 30}'></textarea>
+
+<button onclick="compareObjects()">Compare</button>
+
+<div class="result" id="result"></div>
+
+<script>
+    function objectsAreEquivalent(obj1, obj2) {
+        if (typeof obj1 !== 'object' || obj1 === null || typeof obj2 !== 'object' || obj2 === null) {
+            return false;
+        }
+
+        const keys2 = Object.keys(obj2);
+
+        for (let key of keys2) {
+            if (!obj1.hasOwnProperty(key) || obj1[key] !== obj2[key]) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    function compareObjects() {
+        const obj1Input = document.getElementById('object1').value;
+        const obj2Input = document.getElementById('object2').value;
+
+        let obj1, obj2;
+
+        try {
+            obj1 = JSON.parse(obj1Input);
+            obj2 = JSON.parse(obj2Input);
+        } catch (error) {
+            document.getElementById('result').innerText = 'Invalid JSON format. Please correct it.';
+            return;
+        }
+
+        const result = objectsAreEquivalent(obj1, obj2);
+        document.getElementById('result').innerText = result ? 'Object 1 contains equivalent property values to Object 2.' : 'Object 1 does NOT contain equivalent property values to Object 2.';
+    }
+</script>
+
+</body>
+</html>

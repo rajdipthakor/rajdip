@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>Login page</title>
+   <style>
+    #f1{
+        background-color: rgb(180, 115, 136);
+        font-size: medium;
+        font-family:'Times New Roman', Times, serif;
+        font-display: block;
+        border: 6px solid black;
+        text-align: center;
+        height: 500px;
+        width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+   </style>
+</head>
+<body>
+    <form id="f1" onsubmit=" return valid()">
+        <h1><u><b><i>Login Page</i></b></u></h1>
+      <label><b>UserName:</b></label>
+      <input type="text" size="30" id="username"/><br><br>
+      <label><b>Password:</b></label>
+      <input type="password" size="30" id="password"/><br><br>
+      <label><b>confrom password:</b></label>
+      <input type="number" size="30" id="confrom password"/><br><br>
+      <label><b>Mobile number:</b></label>
+      <input type="text" size="30" id="mobile number"/><br><br>
+      <label><b>Gender:</b></label><br>
+      <label for="male">Male:</label>
+      <input type="radio" name="gender" id="male" value="male"><br>
+      <label for="female">Female:</label>
+      <input type="radio" name="gender" id="female" value="female"><br>
+      <label for="other">Other:</label>
+      <input type="radio" name="gender" id="other" value="other"><br><br>
+      <input type="Submit"  onclick="return  valid()"><br><br>
+      <input type="Reset"/>
+      <h1>👍</h1>
+    </form>
+    <script>
+        function valid() {
+            let user=document.getElementById('username').value;
+            let pass=document.getElementById('password').value;
+            let confrom=document.getElementById('confrom password').value;
+            let mobile=document.getElementById('mobile number').value;
+            if(user==="")
+            {
+                alert("Please enter the username");
+                return false;
+            }
+            if(pass!=confrom)
+            {
+                alert("please enter same password");
+                return false;
+            }
+            if(pass.length>1 || mobile.length<10)
+            {
+                alert("valid mobile number 1 to 10");
+            }
+            if(mobile.length>6 || pass.length<10)
+            {
+                alert("password mustbe between 6 to 10");
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        #special-heading{
+            color: rgb(127, 242, 242);
+            font: 50px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        #grade{
+            height: 500px;
+            background-color: bisque;
+            background-image: linear-gradient(rgb(118, 16, 129),red);
+        }
+        </style>
+</head>
+<body>
+    <div id="grade">
+        <h1 id="special-heading">
+       
+    <h1>
+    <script>
+        let str = "jigar"; 
+        let vol = 0; 
+
+        for (let i = 0; i < str.length; i++) {
+        
+            if (str[i] == 'A' || str[i] == 'E' || str[i] == 'I' || str[i] == 'O' || str[i] == 'U' ||
+                str[i] == 'a' || str[i] == 'e' || str[i] == 'i' || str[i] == 'o' || str[i] == 'u') {
+                vol++; 
+            }
+        }
+
+        if (vol > 0) {
+            document.write("Number of vowels: " + vol);
+        } else {
+            document.write("There are no vowels in the string.");
+        }
+    </script></h1>
+         
+        </h1>
+    </div>
+</body>
+</html>
